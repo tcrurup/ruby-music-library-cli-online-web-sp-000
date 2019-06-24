@@ -8,8 +8,13 @@ class Song
   
   def initialize(song_name, song_artist = nil, song_genre = nil)
     @name = song_name
+<<<<<<< HEAD
     self.artist = song_artist unless song_artist.nil?
     self.genre = song_genre unless song_genre.nil?
+=======
+    @artist = song_artist unless song_artist.nil?
+    @genre = song_genre unless song_genre.nil?
+>>>>>>> c4f8d9feacf15b7ba78e36ceeb587ec86a2e1190
   end
   
   def save

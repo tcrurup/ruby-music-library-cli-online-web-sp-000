@@ -4,6 +4,7 @@ class MusicLibraryController
     MusicImporter.new(filepath).import
   end
   
+<<<<<<< HEAD
   VALID_MENU_SELECTION = [
     'list songs', 
     'list artists', 
@@ -13,6 +14,8 @@ class MusicLibraryController
     'play song',
     'exit']
   
+=======
+>>>>>>> c4f8d9feacf15b7ba78e36ceeb587ec86a2e1190
   def call
     puts "Welcome to your music library!"
     puts "To list all of your songs, enter 'list songs'."
@@ -24,6 +27,7 @@ class MusicLibraryController
     puts "To quit, type 'exit'."
     puts "What would you like to do?"
     input = gets
+<<<<<<< HEAD
     until VALID_MENU_SELECTION.include?(input)
       input = gets
     end
@@ -38,6 +42,12 @@ class MusicLibraryController
     end
         
     
+=======
+    until input == "exit"
+      input = gets
+    end
+    
+>>>>>>> c4f8d9feacf15b7ba78e36ceeb587ec86a2e1190
   end
   
   def list_songs
@@ -70,11 +80,16 @@ class MusicLibraryController
   end
   
   def list_songs_by_genre
+<<<<<<< HEAD
     puts "Please enter the name of a genre:"
+=======
+    puts "Please enter the name of an artist:"
+>>>>>>> c4f8d9feacf15b7ba78e36ceeb587ec86a2e1190
     genre_name = gets
     genre = Genre.find_by_name(genre_name)
     if not genre.nil?
       genre.songs.sort{ |a,b| a.name <=> b.name }.each_with_index do |song, index|
+<<<<<<< HEAD
         puts "#{index + 1}. #{song.artist_name} - #{song.name}"
       end
     end
@@ -89,5 +104,11 @@ class MusicLibraryController
         puts "Playing #{chosen_song.name} by #{chosen_song.artist_name}"
       end
     end
+=======
+        puts "#{index + 1}. #{song.name} - #{song.genre_name}"
+      end
+    end
+  end
+>>>>>>> c4f8d9feacf15b7ba78e36ceeb587ec86a2e1190
   end
 end
